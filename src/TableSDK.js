@@ -1,18 +1,22 @@
 import AsyncStorage from '@react-native-community/async-storage';
+
 export const init = (workspce, apiKey, userHash) => {
   global.workspaceUrl = 'https://' + workspce + '.table.co/';
   global.apiKey = apiKey;
   global.userHash = userHash;
 };
+
 export const showConversationList = () => {
   AsyncStorage.getItem('data').then(data => {
     if (data) {
     }
   });
 };
+
 export const logout = () => {
   AsyncStorage.removeItem('data').then(data => {});
 };
+
 export const register = (userID, userHash, tableParams) => {
   return new Promise(function(resolve, reject) {
     var url = global.workspaceUrl + 'user-service/user/auth/chat-user';
@@ -31,11 +35,11 @@ export const register = (userID, userHash, tableParams) => {
     })
       .then(response => response.json())
       .then(responseJSON => {
-        AsyncStorage.setItem('data', JSON.stringify(responseJSON)).then(
-          data => {
-            resolve('success');
-          },
-        );
+        var data = responseJSON;
+        data.user.workspaceUrl = global.workspaceUrl;
+        AsyncStorage.setItem('data', JSON.stringify(data)).then(data => {
+          resolve('success');
+        });
       })
       .catch(error => {
         reject(error);
