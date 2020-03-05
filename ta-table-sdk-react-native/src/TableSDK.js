@@ -1,20 +1,35 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
 export const init = (workspce, apiKey, userHash) => {
-  global.workspaceUrl = 'https://' + workspce + '.table.co/';
-  global.apiKey = apiKey;
-  global.userHash = userHash;
+  return new Promise(function(resolve, reject) {
+    var validWorkspace = workspce;
+    if (!validWorkspace.includes('http')) {
+      validWorkspace = 'https://' + validWorkspace;
+    }
+    if (!validWorkspace.includes('.')) {
+      validWorkspace = validWorkspace + '.table.co';
+    }
+
+    global.workspaceUrl = validWorkspace;
+    global.apiKey = apiKey;
+    global.userHash = userHash;
+    resolve('success');
+  });
 };
 
-export const showConversationList = () => {
+export const showConversationList = (props) => {
   AsyncStorage.getItem('data').then(data => {
     if (data) {
+      props.navigation.navigate("Dashboard");
     }
   });
 };
 
 export const logout = () => {
-  AsyncStorage.removeItem('data').then(data => {});
+  return new Promise(function (resolve, reject) { 
+    AsyncStorage.removeItem('data').then(data => {resolve('success')});
+
+  })
 };
 
 export const register = (userID, userHash, tableParams) => {
