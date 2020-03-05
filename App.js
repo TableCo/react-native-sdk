@@ -30,14 +30,12 @@ export default class App extends Component {
       .then(() => {});
   };
 
-  onLogoutPress = () => {};
-
   render() {
     return (
-      <View style={{flex: 1}}>
-        <View style={styles.btnStyle}>
-          <Button onPress={this.onButtonPress} title="call"></Button>
-        </View>
+      <View style={{ flex: 1 }}>
+          <View style={styles.btnStyle}>
+            <Button onPress={this.onButtonPress} title="call"></Button>
+          </View> 
         <Dashboard />
       </View>
     );
