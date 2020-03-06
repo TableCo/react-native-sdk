@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
 import {View, Button, StyleSheet} from 'react-native';
-import {Dashboard, TableSDK} from 'ta-table-sdk-react-native';
+import {TableSDK} from 'ta-table-sdk-react-native';
 
 export default class Welcome extends Component {
   constructor(props) {
     super(props);
   }
 
-  static navigationOptions = ({navigation}) => {
+  static navigationOptions = () => {
     return {
       headerTitle: 'Sample App',
     };
@@ -17,19 +16,19 @@ export default class Welcome extends Component {
   componentDidMount() {
     TableSDK.init(
       'https://develop3.dev.table.co/',
-      'qwerty',
-      'ytrewq',
-    ).then(resp => {});
+      'api_Key',
+      'user_hash',
+    ).then(() => {});
   }
 
   onButtonPress = () => {
     var tableParams = {
-      email: 'gareth+agent@foresightmobile.com',
-      firstName: 'Gareth',
-      lastName: 'Reese',
+      email: 'felixthomas@gmail.com',
+      firstName: 'felix',
+      lastName: 'thomas',
       custom_attributes: {},
     };
-    TableSDK.register('sdsdsdsd', 'ytrewq', tableParams)
+    TableSDK.registerWithDetail('any_param1', tableParams)
       .then(() => {
         alert('as');
       })
