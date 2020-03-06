@@ -19,8 +19,6 @@ export class Dashboard extends Component {
     };
   }
 
-
-
   static navigationOptions = ({ navigation }) => {
     return {
       header:null
@@ -32,13 +30,11 @@ export class Dashboard extends Component {
       let asyncData = JSON.parse(res);
       if (asyncData) {
         this.getAPIKey(asyncData)
-        this.setState({ asyncData: asyncData });
-        
+        this.setState({ asyncData: asyncData }); 
       }
     });
-
-    
   };
+
   getAPIKey = (asyncData) => {
     fetch(asyncData.user.workspaceUrl + 'installation-service/installation/opentok-api-key' , {
       method: 'GET',
@@ -54,12 +50,11 @@ export class Dashboard extends Component {
   }
 
   videoCall(videoData) {
-    
     this.setState({ sessionID: videoData.sessionId, tokenID: videoData.token });
     videoData.apiKey = this.state.apiKey;
-    this.props.navigation.navigate("Video",videoData)
+    this.props.navigation.navigate("Video", videoData)
+    alert(JSON.stringify(videoData))
   }
-
 
   render() {
     const {asyncData} = this.state;
@@ -86,8 +81,6 @@ export class Dashboard extends Component {
               this.videoCall(videoData);
             }}
           />):null}
-          
-      
       </View>
     );
   }

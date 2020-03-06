@@ -14,13 +14,13 @@ export class Video extends Component {
       header:null
     };
   };
+
   render() {
     const {data} = this.state;
-
     return (
       <View style={styles.Wrapper}>
         <OTSession
-          apiKey={data.apiKey} //currently set static , It will be set dynamic 
+          apiKey={data.apiKey}
           sessionId={data.sessionId}
           token={data.token}>
           <OTSubscriber style={{flex: 1}} />

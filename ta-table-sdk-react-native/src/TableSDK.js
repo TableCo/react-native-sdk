@@ -28,11 +28,24 @@ export const showConversationList = (props) => {
 export const logout = () => {
   return new Promise(function (resolve, reject) { 
     AsyncStorage.removeItem('data').then(data => {resolve('success')});
-
   })
 };
 
-export const register = (userID, userHash, tableParams) => {
+export const registerWithUser=(userID)=> {
+  var tableParams = {
+      email: '',
+      firstName: '',
+      lastName: '',
+      custom_attributes: {},
+    };
+  return registerApi(userID,tableParams)
+}
+
+export const registerWithDetail=(userID,tableParams)=> {
+  return registerApi(userID,tableParams)
+}
+
+export const registerApi = (userID, userHash, tableParams) => {
   return new Promise(function(resolve, reject) {
     var url = global.workspaceUrl + 'user-service/user/auth/chat-user';
     fetch(url, {

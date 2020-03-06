@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity,} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Header from './Header';
+import PackageJson from './../../../package.json';
 
 export  class Setting extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userData: {}
+    };
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -15,13 +18,27 @@ export  class Setting extends Component {
     };
   };
 
+  componentDidMount = () => {
+    AsyncStorage.getItem('data').then(res => {
+      this.setState({ userData: JSON.parse(res).user })
+    })
+  };
+
   onLogoutPress() {
+    alert(JSON.stringify(this.state.userData))
     AsyncStorage.removeItem('data').then(resp => {
+      alert(resp)
       this.props.navigation.navigate('Welcome')
     });
   }
 
+  getWorkspace = (workspace) => {
+  var res = workspace.substr(workspace.indexOf(':')+3, workspace.indexOf('table')-9);
+    return res;
+  }
+
   render() {  
+    const { userData } = this.state;
     return (
       <View style={{ flex: 1 }}>
         <Header
@@ -30,15 +47,16 @@ export  class Setting extends Component {
           onLeftIconPress={()=>this.props.navigation.goBack()}
         />
 
-        <ItemText title={'Name'} itemName={'John'} />
+        <ItemText title={'Name'} itemName={userData.first_name+" "+userData.last_name} />
 
         <ItemText
           title={'Workspace'}
-          itemName={'develop3.dev'}
+          itemName={this.getWorkspace(""+userData.workspaceUrl)}
           endPointUrl={'.table.co'}
         />
 
-        <ItemText title={'App Version'} itemName={'1.0.0'} />
+        <ItemText title={'App Version'} itemName={PackageJson.version} />
+
         <TouchableOpacity
           style={{
             width: '90%',
