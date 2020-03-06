@@ -1,20 +1,35 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import Header from './Header';
 
-export default class Setting extends Component {
+export  class Setting extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  static navigationOptions = ({ navigation }) => {
+    return {
+      header:null
+    };
+  };
+
   onLogoutPress() {
-    AsyncStorage.removeItem('data');
+    AsyncStorage.removeItem('data').then(resp => {
+      this.props.navigation.navigate('Welcome')
+    });
   }
 
-  render() {
+  render() {  
     return (
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
+        <Header
+          isLeftIcon={true}          
+          headerTitle={'Account Settings'}
+          onLeftIconPress={()=>this.props.navigation.goBack()}
+        />
+
         <ItemText title={'Name'} itemName={'John'} />
 
         <ItemText
