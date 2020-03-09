@@ -25,9 +25,7 @@ export  class Setting extends Component {
   };
 
   onLogoutPress() {
-    alert(JSON.stringify(this.state.userData))
     AsyncStorage.removeItem('data').then(resp => {
-      alert(resp)
       this.props.navigation.navigate('Welcome')
     });
   }

@@ -17,35 +17,37 @@ export const init = (workspce, apiKey, userHash) => {
   });
 };
 
-export const showConversationList = (props) => {
+export const showConversationList = props => {
   AsyncStorage.getItem('data').then(data => {
     if (data) {
-      props.navigation.navigate("Dashboard");
+      props.navigation.navigate('Dashboard');
     }
   });
 };
 
 export const logout = () => {
-  return new Promise(function (resolve, reject) { 
-    AsyncStorage.removeItem('data').then(data => {resolve('success')});
-  })
+  return new Promise(function(resolve, reject) {
+    AsyncStorage.removeItem('data').then(data => {
+      resolve('success');
+    });
+  });
 };
 
-export const registerWithUser=(userID)=> {
+export const registerWithUser = userID => {
   var tableParams = {
-      email: '',
-      firstName: '',
-      lastName: '',
-      custom_attributes: {},
-    };
-  return registerApi(userID,tableParams)
-}
+    email: '',
+    firstName: '',
+    lastName: '',
+    custom_attributes: {},
+  };
+  return registerApi(userID, tableParams);
+};
 
-export const registerWithDetail=(userID,tableParams)=> {
-  return registerApi(userID,tableParams)
-}
+export const registerWithDetail = (userID, tableParams) => {
+  return registerApi(userID, tableParams);
+};
 
-export const registerApi = (userID, userHash, tableParams) => {
+export const registerApi = (userID, tableParams) => {
   return new Promise(function(resolve, reject) {
     var url = global.workspaceUrl + 'user-service/user/auth/chat-user';
     fetch(url, {

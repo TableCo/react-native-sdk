@@ -30,7 +30,7 @@ export default class Welcome extends Component {
     };
     TableSDK.registerWithDetail('any_param1', tableParams)
       .then(() => {
-        alert('as');
+        alert('success');
       })
       .catch(() => {});
   };

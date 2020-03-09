@@ -1,29 +1,68 @@
 import React, { Component } from 'react'
-import {View, Text,Image, TouchableOpacity} from 'react-native';
+import {View, Text,Image, TouchableOpacity,StyleSheet} from 'react-native';
 
 export default class Header extends Component {
     render() {
         const { isLeftIcon, isRightIcon, headerTitle, onRightIconPress, onLeftIconPress  } = this.props;
         return (
-            <View style={{ flexDirection: 'row', height: 50, borderBottomColor: '#fff', borderBottomWidth: 1, elevation: 1, alignItems:'center' }}>
-      <View style={{ flex: 0.4, alignItems:'center' }}>
-        {isLeftIcon ? (     
-          <TouchableOpacity onPress={onLeftIconPress}>
-            <Image source={require('../img/back.png')} style={{ height: 20, width: 20, resizeMode:'contain' }} />
-          </TouchableOpacity>
-        ):null}
-      </View>
-      <View style={{flex:2, alignItems:'center'}}>
-      <Text style={{ color: '#202425', fontSize:16, fontWeight:'bold' }}>{headerTitle}</Text>
-      </View>
-      <View style={{ flex: 0.4, alignItems:'center' }}>
-        {isRightIcon ? (
-          <TouchableOpacity onPress={onRightIconPress}>
-            <Image source={require('../img/setting.png')} style={{ height: 20, width: 20, resizeMode:'contain' }} />
-          </TouchableOpacity>
-        ) : null}
-      </View>
-    </View>
-        )
+          <View style={styles.container}>
+            <View style={styles.sideView}>
+              {isLeftIcon ? (
+                <TouchableOpacity onPress={onLeftIconPress}>
+                  <Image
+                    source={require('../img/back.png')}
+                    style={styles.iconContainer}
+                  />
+                </TouchableOpacity>
+              ) : null}
+            </View>
+            <View style={styles.headerView}>
+              <Text style={styles.headerText}>{headerTitle}</Text>
+            </View>
+            <View style={styles.sideView}>
+              {isRightIcon ? (
+                <TouchableOpacity onPress={onRightIconPress}>
+                  <Image
+                    source={require('../img/setting.png')}
+                    style={styles.iconContainer}
+                  />
+                </TouchableOpacity>
+              ) : null}
+            </View>
+          </View>
+        );
     }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    height: 50,
+    borderBottomColor: '#fff',
+    borderBottomWidth: 1,
+    elevation: 1,
+    alignItems: 'center',
+  },
+
+  sideView: {
+    flex: 0.4,
+    alignItems: 'center',
+  },
+
+  iconContainer: {
+    height: 20,
+    width: 20,
+    resizeMode: 'contain',
+  },
+
+  headerView: {
+    flex: 2,
+    alignItems: 'center',
+  },
+
+  headerText: {
+    color: '#202425',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});

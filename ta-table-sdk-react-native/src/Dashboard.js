@@ -53,7 +53,6 @@ export class Dashboard extends Component {
     this.setState({ sessionID: videoData.sessionId, tokenID: videoData.token });
     videoData.apiKey = this.state.apiKey;
     this.props.navigation.navigate("Video", videoData)
-    alert(JSON.stringify(videoData))
   }
 
   render() {
@@ -61,9 +60,7 @@ export class Dashboard extends Component {
     return (
       <View style={{ flex: 1 }}>
         <Header
-          isRightIcon={true}
           headerTitle={'All Conversations'}
-          onRightIconPress={()=>this.props.navigation.navigate('Setting')}
         />
         {asyncData?(<WebView
             ref="webview"
