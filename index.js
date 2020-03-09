@@ -1,5 +1,5 @@
-import * as TableSDK from './src/TableSDK';
+import * as TableSDK from './lib/TableSDK';
 export {TableSDK};
-export {Dashboard} from './src/Dashboard';
-export {Setting} from './src/Setting';
-export {Video} from './src/Video';
+export {Dashboard} from './lib/Dashboard';
+export {Setting} from './lib/Setting';
+export {Video} from './lib/Video';
