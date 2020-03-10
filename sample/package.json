@@ -18,7 +18,7 @@
     "react-native-webview": "^8.1.2",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",
-    "ta-table-sdk-react-native": "file:.."
+    "table-react-native-sdk": "file:.."
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
