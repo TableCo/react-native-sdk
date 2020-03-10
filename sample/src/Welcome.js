@@ -9,23 +9,23 @@ export default class Welcome extends Component {
 
   static navigationOptions = () => {
     return {
-      headerTitle: 'Sample App',
+      headerTitle: 'Table SDK Sample App',
     };
   };
 
   componentDidMount() {
     TableSDK.init(
-      'https://develop3.dev.table.co/',
-      'api_Key',
-      'user_hash',
+      'https://YOUR_TABLE.table.co/',
+      'YOUR_API_KEY',
+      'YOUR_USER_HASH',
     ).then(() => {});
   }
 
   onRegisterButtonPress = () => {
     var tableParams = {
-      email: 'felixthomas@gmail.com',
-      firstName: 'felix',
-      lastName: 'thomas',
+      email: 'app-user@gmail.com',
+      firstName: 'Your',
+      lastName: 'User',
       custom_attributes: {},
     };
     TableSDK.registerWithDetail('user_id', tableParams)
