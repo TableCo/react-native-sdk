@@ -1,21 +1,22 @@
 {
   "name": "ta-table-sdk-react-native",
   "version": "1.0.0",
-  "description": "asa",
+  "description": "",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "npm start"
   },
-  "author": "as",
-  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/foresightmobile/ta-table-sdk-react-native.git"
   },
-  "keywords": [
-    "table sdk"
-  ],
-  "dependencies": {
-
-  }
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foresightmobile/ta-table-sdk-react-native/issues"
+  },
+  "homepage": "https://github.com/foresightmobile/ta-table-sdk-react-native#readme"
 }
