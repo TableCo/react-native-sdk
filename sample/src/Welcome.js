@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Button, StyleSheet} from 'react-native';
-import {TableSDK} from 'ta-table-sdk-react-native';
+import {TableSDK} from 'table-react-native-sdk';
 
 export default class Welcome extends Component {
   constructor(props) {
