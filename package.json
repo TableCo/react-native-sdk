@@ -1,5 +1,5 @@
 {
-  "name": "ta-table-sdk-react-native",
+  "name": "table-react-native-sdk",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/foresightmobile/ta-table-sdk-react-native.git"
+    "url": "git+https://github.com/TableCo/react-native-sdk.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/foresightmobile/ta-table-sdk-react-native/issues"
+    "url": "https://github.com/TableCo/react-native-sdk/issues"
   },
-  "homepage": "https://github.com/foresightmobile/ta-table-sdk-react-native#readme"
+  "homepage": "https://github.com/TableCo/react-native-sdk#readme"
 }
