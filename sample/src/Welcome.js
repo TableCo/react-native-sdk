@@ -21,18 +21,33 @@ export default class Welcome extends Component {
     ).then(() => {});
   }
 
-  onButtonPress = () => {
+  onRegisterButtonPress = () => {
     var tableParams = {
       email: 'felixthomas@gmail.com',
       firstName: 'felix',
       lastName: 'thomas',
       custom_attributes: {},
     };
-    TableSDK.registerWithDetail('any_param1', tableParams)
+    TableSDK.registerWithDetail('user_id', tableParams)
       .then(() => {
-        alert('success');
+        alert('Successful registration');
+        console.log('Successful registration')
       })
-      .catch(() => {});
+      .catch((e) => {
+        console.log(e)
+        alert(`Error ${e}`);
+      });
+  };
+
+  onRegisterAnonymousButtonPress = () => {
+    TableSDK.registerUnidentifiedUser()
+      .then(() => {
+        alert('Successful anonymous registration');
+      })
+      .catch((e) => {
+        console.log(e)
+        alert(`Error ${e}`);
+      });
   };
 
   onConversationListPress = () => {
@@ -43,7 +58,10 @@ export default class Welcome extends Component {
     return (
       <View style={{flex: 1}}>
         <View style={styles.btnStyle}>
-          <Button onPress={this.onButtonPress} title="Register"></Button>
+          <Button onPress={this.onRegisterButtonPress} title="Register User"></Button>
+        </View>
+        <View style={styles.btnStyle}>
+          <Button onPress={this.onRegisterAnonymousButtonPress} title="Anonymous User"></Button>
         </View>
         <View style={styles.btnStyle}>
           <Button
