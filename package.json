@@ -1,7 +1,7 @@
 {
   "name": "table-react-native-sdk",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "A React Native SDK for table.co",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -14,9 +14,15 @@
     "url": "git+https://github.com/TableCo/react-native-sdk.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TableCo/react-native-sdk/issues"
+  },
+  "peerDependencies": {
+    "react-native-screens": ">= 2.0.0",
+    "react-native-webview": ">= 8.1.0",
+    "react-navigation": ">= 4.0.0",
+    "react-navigation-stack": ">= 1.10.0"
   },
   "homepage": "https://github.com/TableCo/react-native-sdk#readme"
 }
