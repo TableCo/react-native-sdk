@@ -1,7 +1,7 @@
 {
   "name": "table-react-native-sdk",
   "version": "0.1.0",
-  "description": "A React Native SDK for table.co",
+  "description": "A React Native SDK for TABLE.co",
   "main": "index.js",
   "directories": {
     "lib": "lib"
