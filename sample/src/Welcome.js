@@ -24,8 +24,8 @@ export default class Welcome extends Component {
   onRegisterButtonPress = () => {
     var tableParams = {
       email: 'app-user@gmail.com',
-      firstName: 'Your',
-      lastName: 'User',
+      first_name: 'Your',
+      last_name: 'User',
       custom_attributes: {},
     };
     TableSDK.registerWithDetail('user_id', tableParams)

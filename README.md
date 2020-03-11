@@ -28,7 +28,7 @@ A React Native wrapper for [table.co](https://table.co/)
 
     //...rest of your file...
     ```
-    
+
     You'll need to call either `TableSDK.registerUnidentifiedUser()` or `TableSDK.registerWithDetail()` before calling methods that require user information such as `TableSDK.showConversationList()`.
 
 # Usage
@@ -37,8 +37,8 @@ A React Native wrapper for [table.co](https://table.co/)
 ```javascript
 var tableParams = {
     email: 'app-user@gmail.com',
-    firstName: 'Your',
-    lastName: 'User',
+    first_name: 'Your',
+    last_name: 'User',
     custom_attributes: {},
 };
 TableSDK.registerWithDetail('user_id', tableParams)
