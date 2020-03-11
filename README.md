@@ -15,7 +15,7 @@ A React Native wrapper for [table.co](https://table.co/)
     yarn add opentok-react-native  # or npm install opentok-react-native
     ```
 
-1. Import Intercom and initialise the SDK
+1. Import and initialise the SDK
 
     ```javascript
     import {TableSDK} from 'table-react-native-sdk';
