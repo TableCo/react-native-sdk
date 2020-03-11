@@ -22,13 +22,12 @@ A React Native wrapper for [table.co](https://table.co/)
 
     TableSDK.init(
       'https://YOUR_TABLE.table.co/',
-      'YOUR_API_KEY',
-      'YOUR_USER_HASH',
+      'YOUR_API_KEY'
     )
 
     //...rest of your file...
     ```
-    
+
     You'll need to call either `TableSDK.registerUnidentifiedUser()` or `TableSDK.registerWithDetail()` before calling methods that require user information such as `TableSDK.showConversationList()`.
 
 # Usage
