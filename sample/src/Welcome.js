@@ -17,7 +17,6 @@ export default class Welcome extends Component {
     TableSDK.init(
       'https://YOUR_TABLE.table.co/',
       'YOUR_API_KEY',
-      'YOUR_USER_HASH',
     ).then(() => {});
   }
 
@@ -26,6 +25,7 @@ export default class Welcome extends Component {
       email: 'app-user@gmail.com',
       firstName: 'Your',
       lastName: 'User',
+      user_hash: 'USER_HASH',
       custom_attributes: {},
     };
     TableSDK.registerWithDetail('user_id', tableParams)
