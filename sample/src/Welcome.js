@@ -16,11 +16,12 @@ export default class Welcome extends Component {
   componentDidMount() {
     TableSDK.init(
       'https://YOUR_TABLE.table.co/',
-      'YOUR_API_KEY',
+      'api_Key',
+      'user_hash',
     ).then(() => {});
   }
 
-  onRegisterButtonPress = () => {
+  onRegisterButtonPress = async () => {
     var tableParams = {
       email: 'app-user@gmail.com',
       firstName: 'Your',
@@ -28,25 +29,35 @@ export default class Welcome extends Component {
       user_hash: 'USER_HASH',
       custom_attributes: {},
     };
-    TableSDK.registerWithDetail('user_id', tableParams)
-      .then(() => {
-        alert('Successful registration');
-        console.log('Successful registration')
-      })
-      .catch((e) => {
-        console.log(e)
-        alert(`Error ${e}`);
-      });
+
+    try {
+      await TableSDK.registerWithDetail('user_id', tableParams)
+      alert('Successful registration');
+      console.log('Successful registration')
+    } catch (err) {
+      alert(`Error ${err}`);
+      console.log(err)
+    }
+
+    
+      // .then(() => {
+      //   alert('Successful registration');
+      //   console.log('Successful registration')
+      // })
+      // .catch((e) => {
+      //   console.log(e)
+      //   alert(`Error ${e}`);
+      // });
   };
 
   onRegisterAnonymousButtonPress = () => {
-    TableSDK.registerUnidentifiedUser()
+    TableSDK.registerUnidentifiedUser("user_id-32233")
       .then(() => {
         alert('Successful anonymous registration');
       })
       .catch((e) => {
         console.log(e)
-        alert(`Error ${e}`);
+        alert(`Error - ${e}`);
       });
   };
 

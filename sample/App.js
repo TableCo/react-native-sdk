@@ -1,7 +1,7 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Welcome from './src/Welcome';
-import {Dashboard, Setting, Video} from 'ta-table-sdk-react-native';
+import {Dashboard, Setting, Video} from 'table-react-native-sdk';
 
 const AuthStack = createStackNavigator(
   {
