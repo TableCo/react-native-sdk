@@ -1,5 +1,5 @@
 # table-react-native-sdk
-A React Native wrapper for [table.co](https://table.co/)
+A React Native wrapper for [TABLE.co](https://table.co/)
 
 # Installation Guide
 
@@ -21,7 +21,7 @@ A React Native wrapper for [table.co](https://table.co/)
     import {TableSDK} from 'table-react-native-sdk';
 
     TableSDK.init(
-      'https://YOUR_TABLE.table.co/',
+      'https://WORKSPACE.table.co/',
       'YOUR_API_KEY'
     )
 
@@ -35,10 +35,9 @@ A React Native wrapper for [table.co](https://table.co/)
 ### Register a Logged In user
 ```javascript
 var tableParams = {
-    email: 'app-user@gmail.com',
-    firstName: 'Your',
-    lastName: 'User',
-    custom_attributes: {},
+    email: 'johndoe@example.com',
+    firstName: 'John',
+    lastName: 'Doe'
 };
 TableSDK.registerWithDetail('user_id', tableParams)
 ```

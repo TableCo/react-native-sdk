@@ -15,22 +15,22 @@ export default class Welcome extends Component {
 
   componentDidMount() {
     TableSDK.init(
-      'https://YOUR_TABLE.table.co/',
-      'api_Key',
+      'https://WORKSPACE.table.co/',
+      'API_KEY',
     ).then(() => {});
   }
 
   onRegisterButtonPress = async () => {
     var tableParams = {
-      email: 'app-user@gmail.com',
-      firstName: 'Your',
-      lastName: 'User',
+      email: 'johndoe@example.com',
+      firstName: 'John',
+      lastName: 'Doe',
       userHash: 'USER_HASH',
       custom_attributes: {},
     };
 
     try {
-      await TableSDK.registerWithDetail('user_id', tableParams)
+      await TableSDK.registerWithDetail('USER_ID', tableParams)
       alert('Successful registration');
       console.log('Successful registration')
     } catch (err) {
@@ -38,7 +38,7 @@ export default class Welcome extends Component {
       console.log(err)
     }
 
-    
+
       // .then(() => {
       //   alert('Successful registration');
       //   console.log('Successful registration')
