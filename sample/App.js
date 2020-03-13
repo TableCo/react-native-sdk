@@ -7,10 +7,7 @@ import {TableScreen} from 'table-react-native-sdk';
 const AuthStack = createStackNavigator(
   {
     Welcome: Welcome,
-    TableScreen: TableScreen /*,
-    Dashboard: Dashboard,
-    Setting: Setting,
-    Video: Video, */
+    TableScreen: TableScreen
   },
 
   {
