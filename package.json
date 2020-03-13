@@ -19,10 +19,15 @@
     "url": "https://github.com/TableCo/react-native-sdk/issues"
   },
   "peerDependencies": {
+    "@react-native-community/async-storage": "^1.8.0",
+    "@react-navigation/native": ">= 5.0.0",
     "react-native-screens": ">= 2.0.0",
     "react-native-webview": ">= 8.1.0",
     "react-navigation": ">= 4.0.0",
     "react-navigation-stack": ">= 1.10.0"
+  },
+  "dependencies": {
+    "opentok-react-native": "^0.12.2"
   },
   "homepage": "https://github.com/TableCo/react-native-sdk#readme"
 }

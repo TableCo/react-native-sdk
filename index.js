@@ -1,5 +1,4 @@
 import * as TableSDK from './lib/TableSDK';
 export {TableSDK};
-export {Dashboard} from './lib/Dashboard';
-export {Setting} from './lib/Setting';
+export {TableScreen} from './lib/TableScreen';
 export {Video} from './lib/Video';
