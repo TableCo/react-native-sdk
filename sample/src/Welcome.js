@@ -15,7 +15,7 @@ export default class Welcome extends Component {
 
   componentDidMount() {
     TableSDK.init(
-      'https://YOUR_TABLE.dev.table.co/',
+      'https://develop3.dev.table.co/',
       'api_Key',
     ).then(() => {});
   }
