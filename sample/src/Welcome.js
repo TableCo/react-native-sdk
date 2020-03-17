@@ -23,9 +23,9 @@ export default class Welcome extends Component {
   onRegisterButtonPress = async () => {
     var tableParams = {
       email: 'app-user@gmail.com',
-      firstName: 'Your',
-      lastName: 'User',
-      userHash: 'USER_HASH',
+      first_name: 'Your',
+      last_name: 'User',
+      user_hash: 'USER_HASH',
       custom_attributes: {},
     };
 
