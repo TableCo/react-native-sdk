@@ -21,7 +21,7 @@ A React Native wrapper for [table.co](https://table.co/)
     import {TableSDK} from 'table-react-native-sdk';
 
     TableSDK.init(
-      'https://YOUR_TABLE.table.co/',
+      'https://YOUR_WORKSPACE.table.co/',
       'YOUR_API_KEY'
     )
 

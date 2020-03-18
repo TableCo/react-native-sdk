@@ -15,7 +15,7 @@ export default class Welcome extends Component {
 
   componentDidMount() {
     TableSDK.init(
-      'https://YOUR_TABLE.table.co/',
+      'https://YOUR_WORKSPACE.table.co/',
       'api_Key',
     ).then(() => {});
   }
@@ -38,7 +38,7 @@ export default class Welcome extends Component {
       console.log(err)
     }
 
-    
+
       // .then(() => {
       //   alert('Successful registration');
       //   console.log('Successful registration')
