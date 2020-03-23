@@ -22,7 +22,7 @@ A React Native SDK for [TABLE.co](https://table.co)
     //...rest of your file...
     ```
 
-    Your SDK API KEY can be found in the Organization Settings section of your Workspace.
+    Your SDK API key can be found in the Organization Settings section of your Workspace.
 
     You'll need to call either `TableSDK.registerUnidentifiedUser()` or `TableSDK.registerWithDetail()` before calling methods that require user information such as `TableSDK.showConversationList()`.
 
