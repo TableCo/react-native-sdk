@@ -36,7 +36,7 @@ var tableParams = {
     last_name: 'User',
     custom_attributes: {},
 };
-TableSDK.registerWithDetail('user_id', tableParams)
+TableSDK.registerWithDetail('USER_ID', tableParams)
 ```
 
 ### Register an Unidentified user anonymously
