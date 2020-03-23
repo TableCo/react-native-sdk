@@ -9,12 +9,6 @@ A React Native wrapper for [table.co](https://table.co/)
     yarn add table-react-native-sdk  # or npm install table-react-native-sdk
     ```
 
-1. Install `opentok-react-native`:
-
-    ```bash
-    yarn add opentok-react-native  # or npm install opentok-react-native
-    ```
-
 1. Import and initialise the SDK
 
     ```javascript
