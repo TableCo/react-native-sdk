@@ -1,5 +1,5 @@
 # table-react-native-sdk
-A React Native wrapper for [table.co](https://table.co/)
+A React Native SDK for [TABLE.co](https://table.co)
 
 # Installation Guide
 
@@ -12,15 +12,17 @@ A React Native wrapper for [table.co](https://table.co/)
 1. Import and initialise the SDK
 
     ```javascript
-    import {TableSDK} from 'table-react-native-sdk';
+    import { TableSDK } from 'table-react-native-sdk';
 
     TableSDK.init(
       'https://YOUR_WORKSPACE.table.co/',
-      'YOUR_API_KEY'
+      'YOUR_SDK_API_KEY'
     )
 
     //...rest of your file...
     ```
+
+    Your SDK API KEY can be found in the Organization Settings section of your Workspace.
 
     You'll need to call either `TableSDK.registerUnidentifiedUser()` or `TableSDK.registerWithDetail()` before calling methods that require user information such as `TableSDK.showConversationList()`.
 
