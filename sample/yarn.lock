@@ -4401,6 +4401,16 @@ opentok-react-native@^0.12.2:
     underscore "^1.9.1"
     uuid "^3.3.3"
 
+opentok-react-native@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/opentok-react-native/-/opentok-react-native-0.13.0.tgz#1e79c410c4c011663091865d2000d04589d8325d"
+  integrity sha512-KjUbSYVP3m5+CzYXPeMeLvF6qjfKK0d70RpUv6w/XVC6coPNiLtGv4IkAvRR6lGuTdqRSV1T6e+uiPAW0qY2PA==
+  dependencies:
+    axios "^0.19.0"
+    prop-types "^15.7.2"
+    underscore "^1.9.1"
+    uuid "^3.3.3"
+
 optionator@^0.8.1, optionator@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.3.tgz#84fa1d036fe9d3c7e21d99884b601167ec8fb495"
@@ -5578,7 +5588,7 @@ symbol-tree@^3.2.2:
 "table-react-native-sdk@file:..":
   version "0.2.0"
   dependencies:
-    opentok-react-native "^0.12.2"
+    opentok-react-native "^0.13.0"
 
 table@^5.2.3:
   version "5.4.6"

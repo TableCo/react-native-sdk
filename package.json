@@ -27,7 +27,7 @@
     "react-navigation-stack": ">= 1.10.0"
   },
   "dependencies": {
-    "opentok-react-native": "^0.12.2"
+    "opentok-react-native": "^0.13.0"
   },
   "homepage": "https://github.com/TableCo/react-native-sdk#readme"
 }

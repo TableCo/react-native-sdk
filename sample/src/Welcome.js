@@ -15,7 +15,7 @@ export default class Welcome extends Component {
 
   componentDidMount() {
     TableSDK.init(
-      'https://YOUR_WORKSPACE.table.co/',
+      'https://develop3.dev.table.co/',
       'YOUR_SDK_API_KEY',
     ).then(() => {});
   }
@@ -37,20 +37,10 @@ export default class Welcome extends Component {
       alert(`Error ${err}`);
       console.log(err)
     }
-
-
-      // .then(() => {
-      //   alert('Successful registration');
-      //   console.log('Successful registration')
-      // })
-      // .catch((e) => {
-      //   console.log(e)
-      //   alert(`Error ${e}`);
-      // });
   };
 
-  onRegisterAnonymousButtonPress = () => {
-    TableSDK.registerUnidentifiedUser("user_id-32233")
+  onRegisterAnonymousButtonPress = async () => {
+    await TableSDK.registerUnidentifiedUser()
       .then(() => {
         alert('Successful anonymous registration');
       })
@@ -58,6 +48,17 @@ export default class Welcome extends Component {
         console.log(e)
         alert(`Error - ${e}`);
       });
+  };
+
+  onRegisterAnonymousPlusIdButtonPress = async () => {
+    try {
+      await TableSDK.registerWithDetail('USER_ID')
+      alert('Successful registration');
+      console.log('Successful registration')
+    } catch (err) {
+      alert(`Error ${err}`);
+      console.log(err)
+    }
   };
 
   onConversationListPress = () => {
@@ -72,6 +73,9 @@ export default class Welcome extends Component {
         </View>
         <View style={styles.btnStyle}>
           <Button onPress={this.onRegisterAnonymousButtonPress} title="Anonymous User"></Button>
+        </View>
+        <View style={styles.btnStyle}>
+          <Button onPress={this.onRegisterAnonymousPlusIdButtonPress} title="Anonymous Plus ID"></Button>
         </View>
         <View style={styles.btnStyle}>
           <Button
