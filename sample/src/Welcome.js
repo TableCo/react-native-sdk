@@ -13,17 +13,16 @@ export default class Welcome extends Component {
         }
     }
 
-    componentDidMount() {
-        TableSDK.init(
-            'https://develop3.dev.table.co/',
+    async componentDidMount() {
+        await TableSDK.init(
+            'https://YOUR_WORKSPACE.table.co/',
             'YOUR_SDK_API_KEY',
-        ).then(() => {
-        })
+        )
     }
 
     onRegisterButtonPress = async () => {
         let tableParams = {
-            email: 'app-user@gmail.com',
+            email: 'app-user-@gmail.com',
             first_name: 'Your',
             last_name: 'User',
             user_hash: 'USER_HASH',
@@ -41,21 +40,9 @@ export default class Welcome extends Component {
     }
 
     onRegisterAnonymousButtonPress = async () => {
-        await TableSDK.registerUnidentifiedUser()
-            .then(() => {
-                alert('Successful anonymous registration')
-            })
-            .catch((e) => {
-                console.log(e)
-                alert(`Error - ${e}`)
-            })
-    }
-
-    onRegisterAnonymousPlusIdButtonPress = async () => {
         try {
-            await TableSDK.registerWithDetail('USER_ID')
-            alert('Successful registration')
-            console.log('Successful registration')
+            await TableSDK.registerUnidentifiedUser()
+            alert('Successful anonymous registration')
         } catch (err) {
             alert(`Error ${err}`)
             console.log(err)
@@ -74,9 +61,6 @@ export default class Welcome extends Component {
                 </View>
                 <View style={styles.btnStyle}>
                     <Button onPress={this.onRegisterAnonymousButtonPress} title="Anonymous User" />
-                </View>
-                <View style={styles.btnStyle}>
-                    <Button onPress={this.onRegisterAnonymousPlusIdButtonPress} title="Anonymous Plus ID" />
                 </View>
                 <View style={styles.btnStyle}>
                     <Button
