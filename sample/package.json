@@ -12,12 +12,13 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.8.1",
     "@react-navigation/native": "^5.0.9",
+    "invariant": "^2.2.4",
     "opentok-react-native": "^0.12.2",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-screens": "^2.2.0",
-    "react-native-webview": "^8.1.2",
+    "react-native-webview": "^9.0.0",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",
     "table-react-native-sdk": "file:.."
