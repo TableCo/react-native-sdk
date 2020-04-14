@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@react-navigation/routers@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/routers/-/routers-5.3.0.tgz#c32cff9f74e26b127b70086b70744ffe9cd658fd"
+  integrity sha512-hU9ize/NPHS5wWR5KVx/cgN9DH29Y9iHa+SxUd3IJmBnK8ujj0rM8xz3hihY4yfu0kOvTFOPHojoBwnpH5cs+g==
+  dependencies:
+    nanoid "^3.0.2"
+
 axios@^0.19.0:
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
@@ -40,15 +47,20 @@ ms@2.0.0:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
+nanoid@^3.0.2:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.3.tgz#b2bcfcfda4b4d6838bc22a0c8dd3c0a17a204c20"
+  integrity sha512-Zw8rTOUfh6FlKgkEbHiB1buOF2zOPOQyGirABUWn+9Z7m9PpyoLVkh6Ksc53vBjndINQ2+9LfRPaHxb/u45EGg==
+
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
-opentok-react-native@^0.12.2:
-  version "0.12.2"
-  resolved "https://registry.yarnpkg.com/opentok-react-native/-/opentok-react-native-0.12.2.tgz#f174fcebd841720c879437756395199bb897a79a"
-  integrity sha512-aWs+SaHLwtaIpnmQWN5+4V0IOOcELb1EgXIQTJbcxRvXyx1BcNsvFkkqWk4kvnWvDpGMPSXjW64Mcmzmpmw0AA==
+opentok-react-native@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/opentok-react-native/-/opentok-react-native-0.13.0.tgz#1e79c410c4c011663091865d2000d04589d8325d"
+  integrity sha512-KjUbSYVP3m5+CzYXPeMeLvF6qjfKK0d70RpUv6w/XVC6coPNiLtGv4IkAvRR6lGuTdqRSV1T6e+uiPAW0qY2PA==
   dependencies:
     axios "^0.19.0"
     prop-types "^15.7.2"

@@ -23,12 +23,33 @@ A React Native SDK for [TABLE.co](https://table.co)
     ```
 
     Your SDK API key can be found in the Organization Settings section of your Workspace.
+    
+1. Register the `TableScreen` component with your navigator of choice
+
+    For example, with a Stack Navigator your code mile look like so:
+    
+    ```javascript
+    const MainStack = createStackNavigator(
+       {
+           Welcome: Welcome,
+   
+           // Ensure that the TableScreen is added to your navigator so that you can reference it later
+           TableScreen: TableScreen
+       },
+   
+       {
+           initialRouteName: 'Welcome',
+           defaultNavigationOptions: {},
+       },
+   )
+    ```
 
     You'll need to call either `TableSDK.registerUnidentifiedUser()` or `TableSDK.registerWithDetail()` before calling methods that require user information such as `TableSDK.showConversationList()`.
 
 # Usage
 
 ### Register a Logged In user
+
 ```javascript
 var tableParams = {
     email: 'app-user@gmail.com',
@@ -40,6 +61,7 @@ TableSDK.registerWithDetail('USER_ID', tableParams)
 ```
 
 ### Register an Unidentified user anonymously
+
 ```javascript
 TableSDK.registerUnidentifiedUser();
 ```
@@ -49,7 +71,10 @@ TableSDK.registerUnidentifiedUser();
 TableSDK.logout()
 ```
 
-### Show the Table conversation list to the user using the navigator
+### Show the Table conversation list to the user using your navigator
 ```javascript
-TableSDK.showConversationList();
+onConversationListPress = () => {
+    // Navigate to the TableScreen that we registered above in our main component
+    this.props.navigation.navigate('TableScreen')
+}
 ```

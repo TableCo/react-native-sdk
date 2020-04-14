@@ -15,14 +15,14 @@ export default class Welcome extends Component {
 
     async componentDidMount() {
         await TableSDK.init(
-            'https://YOUR_WORKSPACE.table.co/',
+            'https://develop3.dev.table.co/',
             'YOUR_SDK_API_KEY',
         )
     }
 
     onRegisterButtonPress = async () => {
         let tableParams = {
-            email: 'app-user-@gmail.com',
+            email: 'app-user-33333@gmail.com',
             first_name: 'Your',
             last_name: 'User',
             user_hash: 'USER_HASH',
@@ -30,7 +30,7 @@ export default class Welcome extends Component {
         }
 
         try {
-            await TableSDK.registerWithDetail('USER_ID', tableParams)
+            await TableSDK.registerWithDetail('USER_ID33333', tableParams)
             alert('Successful registration')
             console.log('Successful registration')
         } catch (err) {
@@ -50,7 +50,8 @@ export default class Welcome extends Component {
     }
 
     onConversationListPress = () => {
-        TableSDK.showConversationList(this.props)
+        // Navigate to the TableScreen that we registered in App.js
+        this.props.navigation.navigate('TableScreen', { navigation: this.props.navigation } )
     }
 
     render() {
