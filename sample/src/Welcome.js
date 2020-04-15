@@ -16,7 +16,7 @@ export default class Welcome extends Component {
 
     async componentDidMount() {
         await TableSDK.init(
-            'https://develop3.dev.table.co/',
+            'https://YOUR_WORKSPACE.table.co/',
             'YOUR_SDK_API_KEY',
         )
     }
