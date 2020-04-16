@@ -45,10 +45,10 @@ object-assign@^4.1.1:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
-opentok-react-native@^0.12.2:
-  version "0.12.2"
-  resolved "https://registry.yarnpkg.com/opentok-react-native/-/opentok-react-native-0.12.2.tgz#f174fcebd841720c879437756395199bb897a79a"
-  integrity sha512-aWs+SaHLwtaIpnmQWN5+4V0IOOcELb1EgXIQTJbcxRvXyx1BcNsvFkkqWk4kvnWvDpGMPSXjW64Mcmzmpmw0AA==
+opentok-react-native@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/opentok-react-native/-/opentok-react-native-0.13.0.tgz#1e79c410c4c011663091865d2000d04589d8325d"
+  integrity sha512-KjUbSYVP3m5+CzYXPeMeLvF6qjfKK0d70RpUv6w/XVC6coPNiLtGv4IkAvRR6lGuTdqRSV1T6e+uiPAW0qY2PA==
   dependencies:
     axios "^0.19.0"
     prop-types "^15.7.2"
@@ -69,12 +69,27 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.0.tgz#0f37c3613c34fe6b37cd7f763a0d6293ab15c527"
   integrity sha512-GFMtL0vHkiBv9HluwNZTggSn/sCyEt9n02aM0dSAjGGyqyNlAyftYm4phPxdvCigG15JreC5biwxCgTAJZ7yAA==
 
+react-native-animatable@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.3.tgz#a13a4af8258e3bb14d0a9d839917e9bb9274ec8a"
+  integrity sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w==
+  dependencies:
+    prop-types "^15.7.2"
+
+react-native-easy-router@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-easy-router/-/react-native-easy-router-3.1.1.tgz#2bcf3006f24dba3c357f113a921300135be4082c"
+  integrity sha512-HuMKbmy9qkonsp/wuzrMdVW1KG1XQlG5ncuTreh46FttHFYk7/o3XXsFeOEVlvo4pKhocu0syVpFqm5MOg0gxg==
+  dependencies:
+    react-native-animatable "^1.3.3"
+    uuid "^3.4.0"
+
 underscore@^1.9.1:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.2.tgz#0c8d6f536d6f378a5af264a72f7bec50feb7cf2f"
   integrity sha512-D39qtimx0c1fI3ya1Lnhk3E9nONswSKhnffBI0gME9C99fYOkNi04xs8K6pePLhvl1frbDemkaBQ5ikWllR2HQ==
 
-uuid@^3.3.3:
+uuid@^3.3.3, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
