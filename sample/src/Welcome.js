@@ -5,6 +5,7 @@ import {TableSDK} from 'table-react-native-sdk'
 export default class Welcome extends Component {
     constructor(props) {
         super(props)
+        this.navigation = props.navigation
     }
 
     static navigationOptions = () => {
@@ -50,7 +51,14 @@ export default class Welcome extends Component {
     }
 
     onConversationListPress = () => {
-        TableSDK.showConversationList(this.props)
+        this.props.navigation.navigate('TableScreen')
+    }
+
+    onTableScreenFinished = () => {
+        console.log("Table SDK has finished")
+
+        // Navigate back to us
+        this.props.navigation.navigate('Welcome')
     }
 
     render() {
