@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# Symlink the source files into node_modules, so it's easier to edit the SDK code live with hot reload
+
 rm -rf node_modules
 yarn install
 
