@@ -16,22 +16,22 @@ export default class Welcome extends Component {
 
     async componentDidMount() {
         await TableSDK.init(
-            'https://YOUR_WORKSPACE.table.co/',
-            'YOUR_SDK_API_KEY',
+            'https://develop4.dev.table.co/',
+            '978fQmN5ReV3vPKclQgHEg',
         )
     }
 
     onRegisterButtonPress = async () => {
         let tableParams = {
-            email: 'app-user-@gmail.com',
-            first_name: 'Your',
-            last_name: 'User',
-            user_hash: 'USER_HASH',
+            email: 'jackforesight@gmail.com',
+            first_name: 'Jack',
+            last_name: 'Jack',
+            user_hash: '2712',
             custom_attributes: {},
         }
 
         try {
-            await TableSDK.registerWithDetail('USER_ID', tableParams)
+            await TableSDK.registerWithDetail('2712', tableParams)
             alert('Successful registration')
             console.log('Successful registration')
         } catch (err) {
