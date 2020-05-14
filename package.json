@@ -20,6 +20,8 @@
   },
   "peerDependencies": {
     "@react-native-community/async-storage": "^1.8.0",
+    "@react-native-firebase/app": ">= 7.0.0",
+    "@react-native-firebase/messaging": ">= 7.0.0",
     "react-native-screens": ">= 2.0.0",
     "react-native-webview": ">= 9.0.0",
     "react": ">= 16.2.0"

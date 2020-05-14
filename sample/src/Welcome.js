@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {View, Button, StyleSheet} from 'react-native'
 import {TableSDK} from 'table-react-native-sdk'
+import messaging from '@react-native-firebase/messaging'
 
 export default class Welcome extends Component {
     constructor(props) {
@@ -14,11 +15,52 @@ export default class Welcome extends Component {
         }
     }
 
+    onMessageListener;
+    onTokenRefreshListener;
+    onAppOpenedFromBackground;
+
     async componentDidMount() {
         await TableSDK.init(
-            'https://YOUR_WORKSPACE.table.co/',
-            'YOUR_SDK_API_KEY',
+            'YOUR_WORKSPACE_URL',
+            'YOUR_API_KEY',
         )
+
+        const fcmToken = await messaging().getToken();
+        await TableSDK.updateFCMToken(fcmToken);
+
+        messaging().getInitialNotification().then(remoteMessage => {
+            console.log("Get initial notification")
+            if (TableSDK.isTablePushMessage(remoteMessage)) {
+                this.props.navigation.navigate(
+                    'TableScreen',
+                    {
+                        conversationId: remoteMessage.data['table_id']
+                    }
+                )
+            }
+        });
+
+        this.onMessageListener = messaging().onMessage(async remoteMessage => {
+            console.log("New message")
+        });
+
+        this.onTokenRefreshListener = messaging().onTokenRefresh(fcmToken => {
+            TableSDK.updateFCMToken(fcmToken)
+        })
+
+        this.onAppOpenedFromBackground = messaging().onNotificationOpenedApp(remoteMessage => {
+            console.log("Opened app")
+            if (TableSDK.isTablePushMessage(remoteMessage)) {
+                this.props.navigation.navigate(
+                    'TableScreen',
+                    {
+                        conversationId: remoteMessage.data['table_id']
+                    }
+                )
+            }
+        })
+
+
     }
 
     onRegisterButtonPress = async () => {
