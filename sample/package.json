@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.8.1",
+    "@react-native-firebase/app": "^7.0.0",
+    "@react-native-firebase/messaging": "^7.0.0",
     "@react-navigation/native": "^5.0.9",
     "invariant": "^2.2.4",
     "opentok-react-native": "^0.12.2",

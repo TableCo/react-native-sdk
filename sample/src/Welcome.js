@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {View, Button, StyleSheet} from 'react-native'
 import {TableSDK} from 'table-react-native-sdk'
+import messaging from '@react-native-firebase/messaging'
 
 export default class Welcome extends Component {
     constructor(props) {
@@ -14,24 +15,65 @@ export default class Welcome extends Component {
         }
     }
 
+    onMessageListener;
+    onTokenRefreshListener;
+    onAppOpenedFromBackground;
+
     async componentDidMount() {
         await TableSDK.init(
-            'https://develop4.dev.table.co/',
-            '978fQmN5ReV3vPKclQgHEg',
+            'YOUR_WORKSPACE_URL',
+            'YOUR_API_KEY',
         )
+
+        const fcmToken = await messaging().getToken();
+        await TableSDK.updateFCMToken(fcmToken);
+
+        messaging().getInitialNotification().then(remoteMessage => {
+            console.log("Get initial notification")
+            if (TableSDK.isTablePushMessage(remoteMessage)) {
+                this.props.navigation.navigate(
+                    'TableScreen',
+                    {
+                        conversationId: remoteMessage.data['table_id']
+                    }
+                )
+            }
+        });
+
+        this.onMessageListener = messaging().onMessage(async remoteMessage => {
+            console.log("New message")
+        });
+
+        this.onTokenRefreshListener = messaging().onTokenRefresh(fcmToken => {
+            TableSDK.updateFCMToken(fcmToken)
+        })
+
+        this.onAppOpenedFromBackground = messaging().onNotificationOpenedApp(remoteMessage => {
+            console.log("Opened app")
+            if (TableSDK.isTablePushMessage(remoteMessage)) {
+                this.props.navigation.navigate(
+                    'TableScreen',
+                    {
+                        conversationId: remoteMessage.data['table_id']
+                    }
+                )
+            }
+        })
+
+
     }
 
     onRegisterButtonPress = async () => {
         let tableParams = {
-            email: 'jackforesight@gmail.com',
-            first_name: 'Jack',
-            last_name: 'Jack',
-            user_hash: '2712',
+            email: 'app-user-@gmail.com',
+            first_name: 'Your',
+            last_name: 'User',
+            user_hash: 'USER_HASH',
             custom_attributes: {},
         }
 
         try {
-            await TableSDK.registerWithDetail('2712', tableParams)
+            await TableSDK.registerWithDetail('USER_ID', tableParams)
             alert('Successful registration')
             console.log('Successful registration')
         } catch (err) {
