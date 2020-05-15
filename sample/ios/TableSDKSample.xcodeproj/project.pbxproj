@@ -66,6 +66,7 @@
 		B2A09CF78D23AE794BF6F364 /* Pods-TableSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableSDKSample.debug.xcconfig"; path = "Target Support Files/Pods-TableSDKSample/Pods-TableSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B6663061A2100396A064E1A3 /* Pods-TableSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableSDKSample.release.xcconfig"; path = "Target Support Files/Pods-TableSDKSample/Pods-TableSDKSample.release.xcconfig"; sourceTree = "<group>"; };
 		C03CA7CC4D3AD377C2A83215 /* libPods-TableSDKSampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TableSDKSampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1DDA2E3246D53B900C7CFD0 /* TableSDKSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TableSDKSample.entitlements; path = TableSDKSample/TableSDKSample.entitlements; sourceTree = "<group>"; };
 		DE768E0791B9A0D2CC5A12E1 /* Pods-TableSDKSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableSDKSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-TableSDKSampleTests/Pods-TableSDKSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -128,6 +129,7 @@
 		13B07FAE1A68108700A75B9A /* TableSDKSample */ = {
 			isa = PBXGroup;
 			children = (
+				D1DDA2E3246D53B900C7CFD0 /* TableSDKSample.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -298,6 +300,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = C8Y75DGU2X;
 						LastSwiftMigration = 1140;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -649,8 +652,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TableSDKSample/TableSDKSample.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = C8Y75DGU2X;
 				INFOPLIST_FILE = TableSDKSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -658,7 +663,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = co.table.sample.reactnative;
 				PRODUCT_NAME = TableSDKSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "TableSDKSample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -673,7 +678,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TableSDKSample/TableSDKSample.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C8Y75DGU2X;
 				INFOPLIST_FILE = TableSDKSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -681,7 +688,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = co.table.sample.reactnative;
 				PRODUCT_NAME = TableSDKSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "TableSDKSample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
