@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-import {View, Button, StyleSheet} from 'react-native'
+import {View, Button, StyleSheet, Platform} from 'react-native'
 import {TableSDK} from 'table-react-native-sdk'
 import messaging from '@react-native-firebase/messaging'
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 export default class Welcome extends Component {
     constructor(props) {
@@ -21,53 +22,75 @@ export default class Welcome extends Component {
 
     async componentDidMount() {
         await TableSDK.init(
-            'YOUR_WORKSPACE_URL',
-            'YOUR_API_KEY',
+            'https://YOUR_WORKSPACE.table.co/',
+            'YOUR_SDK_API_KEY',
         )
 
-        const fcmToken = await messaging().getToken();
-        await TableSDK.updateFCMToken(fcmToken);
+        if (Platform.OS === 'ios') {
+            PushNotificationIOS.addEventListener('register', (token) => {
+                TableSDK.updateAPNSToken(token)
+            });
 
-        messaging().getInitialNotification().then(remoteMessage => {
-            console.log("Get initial notification")
-            if (TableSDK.isTablePushMessage(remoteMessage)) {
-                this.props.navigation.navigate(
-                    'TableScreen',
-                    {
-                        conversationId: remoteMessage.data['table_id']
-                    }
-                )
-            }
-        });
+            PushNotificationIOS.addEventListener('localNotification', (pushNotification) => {
+                console.log("Notification: " + JSON.stringify(pushNotification));
+                this.handleIOSNotification(pushNotification);
+            });
 
-        this.onMessageListener = messaging().onMessage(async remoteMessage => {
-            console.log("New message")
-        });
+            await PushNotificationIOS.requestPermissions();
 
-        this.onTokenRefreshListener = messaging().onTokenRefresh(fcmToken => {
-            TableSDK.updateFCMToken(fcmToken)
-        })
+            PushNotificationIOS.getInitialNotification().then(pushNotification => {
+                this.handleIOSNotification(pushNotification);
+            });
+        } else {
+            const fcmToken = await messaging().getToken();
+            await TableSDK.updateFCMToken(fcmToken);
 
-        this.onAppOpenedFromBackground = messaging().onNotificationOpenedApp(remoteMessage => {
-            console.log("Opened app")
-            if (TableSDK.isTablePushMessage(remoteMessage)) {
-                this.props.navigation.navigate(
-                    'TableScreen',
-                    {
-                        conversationId: remoteMessage.data['table_id']
-                    }
-                )
-            }
-        })
+            messaging().getInitialNotification().then(remoteMessage => {
+                this.handleFCMNotification(remoteMessage);
+            });
 
+            this.onMessageListener = messaging().onMessage(async remoteMessage => {
+                console.log("New message")
+            });
 
+            this.onTokenRefreshListener = messaging().onTokenRefresh(fcmToken => {
+                TableSDK.updateFCMToken(fcmToken)
+            })
+
+            this.onAppOpenedFromBackground = messaging().onNotificationOpenedApp(remoteMessage => {
+                this.handleFCMNotification(remoteMessage);
+            })
+        }
+
+    }
+
+    handleFCMNotification = (remoteMessage) => {
+        if (TableSDK.isTablePushMessageFCM(remoteMessage)) {
+            this.props.navigation.navigate(
+                'TableScreen',
+                {
+                    conversationId: remoteMessage.data['table_id']
+                }
+            )
+        }
+    }
+
+    handleIOSNotification = (pushNotification) => {
+        if (TableSDK.isTablePushMessageIOS(pushNotification)) {
+            this.props.navigation.navigate(
+                'TableScreen',
+                {
+                    conversationId: pushNotification._data['table_id']
+                }
+            )
+        }
     }
 
     onRegisterButtonPress = async () => {
         let tableParams = {
             email: 'app-user-@gmail.com',
             first_name: 'Your',
-            last_name: 'User',
+            last_name: 'Name',
             user_hash: 'USER_HASH',
             custom_attributes: {},
         }
