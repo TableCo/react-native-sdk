@@ -136,8 +136,8 @@ android {
         versionName "1.0"
         multiDexEnabled true
         manifestPlaceholders = [
-                JPUSH_APPKEY: "1050a65fff9d269f042b5647",         //在此替换你的APPKey
-                JPUSH_CHANNEL: "default"        //在此替换你的channel
+                JPUSH_APPKEY: "YOUR_APP_KEY",         //在此替换你的APPKey
+                JPUSH_CHANNEL: "YOUR_NOTIFICATION_CHANNEL"        //在此替换你的channel
         ]
     }
     splits {
