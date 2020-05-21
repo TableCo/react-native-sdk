@@ -3224,6 +3224,11 @@ istanbul-reports@^2.2.6:
   dependencies:
     html-escaper "^2.0.0"
 
+jcore-react-native@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/jcore-react-native/-/jcore-react-native-1.8.0.tgz#924ebe30c0d4fa6a3a52a7fd162e965facc90763"
+  integrity sha512-BhN0K9sCxqQl2Nyw4adGd9JGd0OOqN+RsOoBXvkoReGKkRzAeeCHcq4UxeojemzAX/1H9uhRCUnzruxp1olyeg==
+
 jest-changed-files@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-24.9.0.tgz#08d8c15eb79a7fa3fc98269bc14b451ee82f8039"
@@ -3557,6 +3562,11 @@ jest@^24.9.0:
 jetifier@^1.6.2:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.5.tgz#ea87324a4230bef20a9651178ecab978ee54a8cb"
+
+jpush-react-native@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/jpush-react-native/-/jpush-react-native-2.8.1.tgz#bd3d955c46de5ff34390720f7c3aca4371f82958"
+  integrity sha512-1TZvLhZbv84hzW/Wk+yd/dxBBja1WO5BQx+8YPHh0sfpOiaECd/zIlYNX4yArFKXmY1BxgQymJ06YDTWuapH6g==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -4850,6 +4860,11 @@ react-native-gesture-handler@^1.6.0:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-google-api-availability-bridge@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-google-api-availability-bridge/-/react-native-google-api-availability-bridge-1.3.0.tgz#1fc67c6b568107ed51dc02c50b21d19c7c296a35"
+  integrity sha1-H8Z8a1aBB+1R3ALFCyHRnHwpajU=
 
 react-native-push-notification@^3.4.0:
   version "3.4.0"
