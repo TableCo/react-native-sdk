@@ -107,31 +107,31 @@ To implement iOS Push Notifications with this SDK, you will need to add the afor
 
 Documentation for this plugin can be found [here](https://github.com/react-native-community/push-notification-ios).
 
-###APNS Token
+### APNS Token
 To start receiving iOS Push Notifications from your Table conversations, you will need to pass the APNS Token the above package gives you to this function:
 ```javascript
 TableSDK.updateAPNSToken(apnsToken)
 ```
 
-###Checking for Table Message
+### Checking for Table Message
 To check that the push notification you are getting is a Table message, you can use the function: 
 ```javascript
 TableSDK.isTablePushMessageIOS(pushNotification)
 ```
 If this returns true, the push notification will have a ```table_id``` parameter in the ```_data``` of the push notification. ```table_id``` is the conversation ID that the message came from.
 
-#JPush
+# JPush
 This Table SDK also supports JPush notifications. We have peer dependencies for ```jpush-react-native``` and ```jcore-react-native```
 
 The setup and installation guide for JPush notifications can be found [here](https://github.com/jpush/jpush-react-native)
 
-###JPush Registration ID
+### JPush Registration ID
 To receive JPush Notifications from your Table conversations, you will need to pass the JPush Registraction ID to this function:
 ```javascript
 TableSDK.updateJPushRegistrationID(registrationId)
 ```
 
-###Checking for Table Message
+### Checking for Table Message
 To check that the push notification you are getting is a Table message, you can use the function: 
 ```javascript
 TableSDK.isTablePushMessageJPush(pushNotification)
