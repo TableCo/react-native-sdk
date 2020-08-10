@@ -16,7 +16,8 @@ A React Native SDK for [TABLE.co](https://table.co)
 
     TableSDK.init(
       'https://YOUR_WORKSPACE.table.co/',
-      'YOUR_SDK_API_KEY'
+      'YOUR_SDK_API_KEY',
+      'EXPERIENCE_SHORT_CODE' /* optional */
     )
 
     //...rest of your file...
@@ -26,13 +27,13 @@ A React Native SDK for [TABLE.co](https://table.co)
 
     ```javascript
     import {TableScreen} from 'table-react-native-sdk'
-    
+
     const AuthStack = createStackNavigator(
         {
             Welcome: MyHomeScreen,
             TableScreen: TableScreen
         },
-    
+
         {
             initialRouteName: 'MyHomeScreen',
             defaultNavigationOptions: {},
@@ -67,7 +68,7 @@ TableSDK.registerUnidentifiedUser();
 TableSDK.logout()
 ```
 
-### Show the Table conversation list to the user 
+### Show the Table conversation list to the user
 ```javascript
 onShowTable = () => {
     this.props.navigation.navigate('TableScreen')
@@ -91,7 +92,7 @@ TableSDK.updateFcmToken(fcmToken, androidNotificationChannel)
 The ```androidNotificationChannel``` argument in this function is optional.
 
 ###Checking for Table message
-To check that the message you are getting from Firebase is a Table message, you can use the function: 
+To check that the message you are getting from Firebase is a Table message, you can use the function:
 ```javascript
 TableSDK.isTablePushMessageFCM(remoteMessage)
 ```
@@ -114,7 +115,7 @@ TableSDK.updateAPNSToken(apnsToken)
 ```
 
 ### Checking for Table Message
-To check that the push notification you are getting is a Table message, you can use the function: 
+To check that the push notification you are getting is a Table message, you can use the function:
 ```javascript
 TableSDK.isTablePushMessageIOS(pushNotification)
 ```
@@ -132,7 +133,7 @@ TableSDK.updateJPushRegistrationID(registrationId)
 ```
 
 ### Checking for Table Message
-To check that the push notification you are getting is a Table message, you can use the function: 
+To check that the push notification you are getting is a Table message, you can use the function:
 ```javascript
 TableSDK.isTablePushMessageJPush(pushNotification)
 ```
