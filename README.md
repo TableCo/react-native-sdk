@@ -1,3 +1,4 @@
+
 # table-react-native-sdk
 A React Native SDK for [TABLE.co](https://table.co)
 
@@ -44,6 +45,72 @@ A React Native SDK for [TABLE.co](https://table.co)
     Your SDK API key can be found in the Organization Settings section of your Workspace.
 
     You'll need to call either `TableSDK.registerUnidentifiedUser()` or `TableSDK.registerWithDetail()` before calling methods that require user information such as `TableSDK.showConversationList()`.
+
+## Jitsi
+ ### iOS Config
+ 1.) Edit `Info.plist` and add the following lines
+
+```
+<key>NSCameraUsageDescription</key>
+<string>Camera Permission</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>Microphone Permission</string>
+```
+2.) in `Info.plist`, make sure that 
+```
+<key>UIBackgroundModes</key>
+<array>
+</array>
+```
+contains `<string>voip</string>`
+
+### Android Config
+1.) In `android/app/build.gradle`, add/replace the following lines:
+
+```
+project.ext.react = [
+    entryFile: "index.js",
+    bundleAssetName: "app.bundle",
+]
+```
+
+2.) In `android/app/src/main/java/com/xxx/MainApplication.java` add/replace the following methods:
+
+```
+  import androidx.annotation.Nullable; // <--- Add this line if not already existing
+  ...
+    @Override
+    protected String getJSMainModuleName() {
+      return "index";
+    }
+
+    @Override
+    protected @Nullable String getBundleAssetName() {
+      return "app.bundle";
+    }
+```
+
+3.) In `android/build.gradle`, add the following code 
+```
+allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven {
+            url "https://maven.google.com"
+        }
+        maven { // <---- Add this block
+            url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
+        }
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+
 
 # Usage
 
