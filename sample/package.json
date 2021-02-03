@@ -18,7 +18,6 @@
     "invariant": "^2.2.4",
     "jcore-react-native": "^1.8.0",
     "jpush-react-native": "^2.8.1",
-    "opentok-react-native": "^0.12.2",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-gesture-handler": "^1.6.0",
