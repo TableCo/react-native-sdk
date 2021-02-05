@@ -47,6 +47,9 @@ A React Native SDK for [TABLE.co](https://table.co)
     You'll need to call either `TableSDK.registerUnidentifiedUser()` or `TableSDK.registerWithDetail()` before calling methods that require user information such as `TableSDK.showConversationList()`.
 
 ## Jitsi
+
+To use Jitsi video calls you'll need to add the `TableCo/react-native-jitsi-meet` peer dependency with `yarn add TableCo/react-native-jitsi-meet` in your own project.
+
  ### iOS Config
  1.) Edit `Info.plist` and add the following lines
 
