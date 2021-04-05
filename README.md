@@ -41,6 +41,9 @@ A React Native SDK for [TABLE.co](https://table.co)
         },
     )
     ```
+    > :warning:  If you are using custom navigation solutions you should pass a function to the ```OnFinished``` prop that handles going back to your application
+    
+
 
     Your SDK API key can be found in the Organization Settings section of your Workspace.
 
