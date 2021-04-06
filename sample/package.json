@@ -25,7 +25,7 @@
     "react-native-jitsi-meet": "TableCo/react-native-jitsi-meet",
     "react-native-push-notification": "^7.2.0",
     "react-native-screens": "^2.2.0",
-    "react-native-webview": "^9.0.0",
+    "react-native-webview": "^11.0.0",
     "react-native-windows": "^0.63.18",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",
